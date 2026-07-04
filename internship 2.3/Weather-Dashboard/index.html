@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast - Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="animated-bg"></div>
+    
+    <div class="container glass-panel">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-cloud-sun"></i>
+                <h1>SkyCast</h1>
+            </div>
+            <div class="controls">
+                <button id="unit-toggle" class="icon-btn" title="Toggle °C / °F">°C</button>
+                <button id="theme-toggle" class="icon-btn" title="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button id="location-btn" class="icon-btn" title="Use Current Location">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="search-section">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="city-input" placeholder="Search for any city...">
+                <button id="search-btn">Search</button>
+            </div>
+            <div id="error-message" class="error-message hidden">City not found. Please try again.</div>
+            <div class="recent-searches" id="recent-searches">
+                <!-- Recent searches will be injected here -->
+            </div>
+        </div>
+
+        <main id="weather-content" class="hidden fade-in">
+            <div class="current-weather">
+                <div class="city-info">
+                    <h2 id="city-name">London, UK</h2>
+                    <p id="current-date">Monday, 12 Oct | 10:30 AM</p>
+                </div>
+                <div class="weather-main">
+                    <div class="temp-box">
+                        <img id="weather-icon" src="" alt="Weather Icon" class="weather-icon-large">
+                        <div class="temp-wrapper">
+                            <span id="current-temp" class="temperature">24</span><span class="unit">°C</span>
+                        </div>
+                    </div>
+                    <div class="condition-box">
+                        <h3 id="weather-condition">Partly Cloudy</h3>
+                        <p>Feels like <span id="feels-like">26</span><span class="unit">°C</span></p>
+                    </div>
+                </div>
+                
+                <div class="weather-details grid-4">
+                    <div class="detail-card glass-card">
+                        <i class="fa-solid fa-droplet"></i>
+                        <p class="detail-label">Humidity</p>
+                        <p id="humidity" class="detail-value">60%</p>
+                    </div>
+                    <div class="detail-card glass-card">
+                        <i class="fa-solid fa-wind"></i>
+                        <p class="detail-label">Wind Speed</p>
+                        <p id="wind-speed" class="detail-value">12 km/h</p>
+                    </div>
+                    <div class="detail-card glass-card">
+                        <i class="fa-solid fa-gauge-high"></i>
+                        <p class="detail-label">Pressure</p>
+                        <p id="pressure" class="detail-value">1012 hPa</p>
+                    </div>
+                    <div class="detail-card glass-card">
+                        <i class="fa-solid fa-sun"></i>
+                        <p class="detail-label">UV Index</p>
+                        <p id="uv-index" class="detail-value">5</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forecast-section">
+                <h3>5-Day Forecast</h3>
+                <div class="forecast-container" id="forecast-container">
+                    <!-- Forecast cards will be injected here -->
+                </div>
+            </div>
+            
+            <div class="last-updated">
+                <p>Last updated: <span id="update-time">Just now</span></p>
+                <button id="refresh-btn" class="icon-btn small-btn" title="Refresh">
+                    <i class="fa-solid fa-rotate-right"></i>
+                </button>
+            </div>
+        </main>
+
+        <div id="loading-spinner" class="loading-spinner hidden">
+            <div class="spinner"></div>
+            <p>Fetching weather data...</p>
+        </div>
+        
+        <footer>
+            <p>Developed with <i class="fa-solid fa-heart"></i> for Portfolio</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
