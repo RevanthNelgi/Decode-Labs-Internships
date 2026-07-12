@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Admission Portal</title>
+    <link rel="stylesheet" href="style.css">    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>Global Tech University</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Programs</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>    <header class="hero">
+        <div class="hero-content">
+            <h1>Shape Your Future With Us</h1>
+            <p>Admissions Open for 2026-2027 Academic Year. Register below to start your journey.</p>
+        </div>
+    </header>
+
+    <main class="registration-section">
+        <div class="form-container glass-panel">
+            <div class="form-header">
+                <h2>Admission Registration</h2>
+                <p>Please fill in your details accurately.</p>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <p class="progress-text" id="progress-text">0% Completed</p>
+
+            <form id="admission-form" novalidate>                <div class="form-grid">                    <div class="input-group">
+                        <i class="fa-solid fa-user input-icon"></i>
+                        <input type="text" id="fullName" name="fullName" required placeholder=" ">
+                        <label for="fullName">Full Name</label>
+                        <span class="error-msg" id="fullName-error"></span>
+                    </div>                    <div class="input-group">
+                        <i class="fa-solid fa-calendar-alt input-icon"></i>
+                        <input type="date" id="dob" name="dob" required placeholder=" ">
+                        <label for="dob">Date of Birth</label>
+                        <span class="error-msg" id="dob-error"></span>
+                    </div>                    <div class="input-group">
+                        <i class="fa-solid fa-hourglass-half input-icon"></i>
+                        <input type="text" id="age" name="age" readonly placeholder=" ">
+                        <label for="age">Age</label>
+                    </div>                    <div class="input-group">
+                        <i class="fa-solid fa-venus-mars input-icon"></i>
+                        <select id="gender" name="gender" required>
+                            <option value="" disabled selected></option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <label for="gender">Gender</label>
+                        <span class="error-msg" id="gender-error"></span>
+                    </div>                    <div class="input-group">
+                        <i class="fa-solid fa-envelope input-icon"></i>
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email">Email Address</label>
+                        <span class="error-msg" id="email-error"></span>
+                    </div>                    <div class="input-group">
+                        <i class="fa-solid fa-phone input-icon"></i>
+                        <input type="tel" id="mobile" name="mobile" required placeholder=" " maxlength="10">
+                        <label for="mobile">Mobile Number</label>
+                        <span class="error-msg" id="mobile-error"></span>
+                    </div>                    <div class="input-group">
+                        <i class="fa-solid fa-user-tie input-icon"></i>
+                        <input type="text" id="parentName" name="parentName" required placeholder=" ">
+                        <label for="parentName">Parent/Guardian Name</label>
+                        <span class="error-msg" id="parentName-error"></span>
+                    </div>                    <div class="input-group">
+                        <i class="fa-solid fa-phone-alt input-icon"></i>
+                        <input type="tel" id="parentMobile" name="parentMobile" required placeholder=" " maxlength="10">
+                        <label for="parentMobile">Parent Mobile Number</label>
+                        <span class="error-msg" id="parentMobile-error"></span>
+                    </div>                    <div class="input-group full-width">
+                        <i class="fa-solid fa-map-marker-alt input-icon"></i>
+                        <input type="text" id="address" name="address" required placeholder=" ">
+                        <label for="address">Address</label>
+                        <span class="error-msg" id="address-error"></span>
+                    </div>                    <div class="input-group">
+                        <i class="fa-solid fa-city input-icon"></i>
+                        <input type="text" id="city" name="city" required placeholder=" ">
+                        <label for="city">City</label>
+                        <span class="error-msg" id="city-error"></span>
+                    </div>                    <div class="input-group">
+                        <i class="fa-solid fa-map input-icon"></i>
+                        <input type="text" id="state" name="state" required placeholder=" ">
+                        <label for="state">State</label>
+                        <span class="error-msg" id="state-error"></span>
+                    </div>                    <div class="input-group">
+                        <i class="fa-solid fa-map-pin input-icon"></i>
+                        <input type="text" id="pincode" name="pincode" required placeholder=" " maxlength="6">
+                        <label for="pincode">PIN Code</label>
+                        <span class="error-msg" id="pincode-error"></span>
+                    </div>                    <div class="input-group">
+                        <i class="fa-solid fa-book input-icon"></i>
+                        <select id="course" name="course" required>
+                            <option value="" disabled selected></option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="AI & ML">AI & ML</option>
+                            <option value="CSE">CSE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="MBA">MBA</option>
+                            <option value="BBA">BBA</option>
+                            <option value="MCA">MCA</option>
+                        </select>
+                        <label for="course">Course Selection</label>
+                        <span class="error-msg" id="course-error"></span>
+                    </div>                    <div class="input-group">
+                        <i class="fa-solid fa-percent input-icon"></i>
+                        <input type="number" id="percentage" name="percentage" required placeholder=" " min="0" max="100" step="0.01">
+                        <label for="percentage">12th Percentage</label>
+                        <span class="error-msg" id="percentage-error"></span>
+                    </div>                    <div class="input-group">
+                        <i class="fa-solid fa-calendar input-icon"></i>
+                        <select id="admissionYear" name="admissionYear" required>
+                            <option value="" disabled selected></option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                        </select>
+                        <label for="admissionYear">Preferred Admission Year</label>
+                        <span class="error-msg" id="admissionYear-error"></span>
+                    </div>                    <div class="input-group">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input type="password" id="password" name="password" required placeholder=" ">
+                        <label for="password">Password</label>
+                        <i class="fa-solid fa-eye-slash toggle-password"></i>
+                        <div class="password-strength" id="password-strength"></div>
+                        <span class="error-msg" id="password-error"></span>
+                    </div>                    <div class="input-group">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required placeholder=" ">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <span class="error-msg" id="confirmPassword-error"></span>
+                    </div>
+                </div>                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I accept the <a href="#">Terms & Conditions</a> and confirm that all details provided are correct.</label>
+                    <span class="error-msg" id="terms-error"></span>
+                </div>                <div class="form-actions">
+                    <button type="button" class="btn-reset" id="reset-btn">Reset</button>
+                    <button type="submit" class="btn-submit" id="submit-btn">Submit Registration</button>
+                </div>
+            </form>
+        </div>
+    </main>    <footer class="footer">
+        <p>&copy; 2026 Global Tech University. All rights reserved.</p>
+        <p>Contact: admission@gtu.edu | +1 800 123 4567</p>
+    </footer>    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content glass-panel">
+            <i class="fa-solid fa-circle-check success-icon"></i>
+            <h3>Registration Successful!</h3>
+            <p>Your application has been received. Please check your email for further instructions.</p>
+            <button class="btn-submit" id="close-modal-btn">Continue</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
